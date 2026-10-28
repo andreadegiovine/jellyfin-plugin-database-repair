@@ -1,6 +1,6 @@
 using MediaBrowser.Model.Plugins;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Configuration;
+namespace Jellyfin.Plugin.DatabaseRepair.Configuration;
 
 /// <summary>
 /// Plugin configuration, edited in the settings page of the plugin.

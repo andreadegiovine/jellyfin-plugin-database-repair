@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Models;
+namespace Jellyfin.Plugin.DatabaseRepair.Models;
 
 /// <summary>
 /// The schema of the database as it is right now: tables, columns and foreign keys.

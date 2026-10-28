@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Models;
+namespace Jellyfin.Plugin.DatabaseRepair.Models;
 
 /// <summary>
 /// One statement executed by the repair.

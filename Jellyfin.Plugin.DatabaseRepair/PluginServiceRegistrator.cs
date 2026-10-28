@@ -1,9 +1,9 @@
-using Jellyfin.Plugin.DatabaseOptimize.Services;
+using Jellyfin.Plugin.DatabaseRepair.Services;
 using MediaBrowser.Controller;
 using MediaBrowser.Controller.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Jellyfin.Plugin.DatabaseOptimize;
+namespace Jellyfin.Plugin.DatabaseRepair;
 
 /// <summary>
 /// Registers the plugin's supporting services. The scheduled task itself must not be registered

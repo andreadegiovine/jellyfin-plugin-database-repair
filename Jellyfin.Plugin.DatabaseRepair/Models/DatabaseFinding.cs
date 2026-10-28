@@ -1,4 +1,4 @@
-namespace Jellyfin.Plugin.DatabaseOptimize.Models;
+namespace Jellyfin.Plugin.DatabaseRepair.Models;
 
 /// <summary>
 /// The kind of problem found in the database.

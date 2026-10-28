@@ -1,4 +1,4 @@
-namespace Jellyfin.Plugin.DatabaseOptimize.Services;
+namespace Jellyfin.Plugin.DatabaseRepair.Services;
 
 /// <summary>
 /// SQL used to check and repair the alternate versions of a video. Jellyfin models them with

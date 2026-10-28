@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Services;
+namespace Jellyfin.Plugin.DatabaseRepair.Services;
 
 /// <summary>
 /// Helpers to build SQL text from names read from the schema.

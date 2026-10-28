@@ -1,4 +1,4 @@
-namespace Jellyfin.Plugin.DatabaseOptimize.Models;
+namespace Jellyfin.Plugin.DatabaseRepair.Models;
 
 /// <summary>
 /// A foreign key read from the live schema of the database.

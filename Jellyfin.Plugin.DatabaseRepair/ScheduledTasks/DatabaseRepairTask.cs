@@ -3,39 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Jellyfin.Plugin.DatabaseOptimize.Configuration;
-using Jellyfin.Plugin.DatabaseOptimize.Models;
-using Jellyfin.Plugin.DatabaseOptimize.Services;
+using Jellyfin.Plugin.DatabaseRepair.Configuration;
+using Jellyfin.Plugin.DatabaseRepair.Models;
+using Jellyfin.Plugin.DatabaseRepair.Services;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Model.Globalization;
 using MediaBrowser.Model.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.ScheduledTasks;
+namespace Jellyfin.Plugin.DatabaseRepair.ScheduledTasks;
 
 /// <summary>
 /// Scheduled task that reads the schema of the database, checks it and repairs the foreign key
 /// problems it finds.
 /// </summary>
-public sealed class DatabaseOptimizeTask : IScheduledTask
+public sealed class DatabaseRepairTask : IScheduledTask
 {
     private readonly IDatabaseDoctor _doctor;
     private readonly ILibraryManager _libraryManager;
     private readonly ILocalizationManager _localization;
-    private readonly ILogger<DatabaseOptimizeTask> _logger;
+    private readonly ILogger<DatabaseRepairTask> _logger;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DatabaseOptimizeTask"/> class.
+    /// Initializes a new instance of the <see cref="DatabaseRepairTask"/> class.
     /// </summary>
     /// <param name="doctor">Instance of the <see cref="IDatabaseDoctor"/> interface.</param>
     /// <param name="libraryManager">Instance of the <see cref="ILibraryManager"/> interface.</param>
     /// <param name="localization">Instance of the <see cref="ILocalizationManager"/> interface.</param>
-    /// <param name="logger">Instance of the <see cref="ILogger{DatabaseOptimizeTask}"/> interface.</param>
-    public DatabaseOptimizeTask(
+    /// <param name="logger">Instance of the <see cref="ILogger{DatabaseRepairTask}"/> interface.</param>
+    public DatabaseRepairTask(
         IDatabaseDoctor doctor,
         ILibraryManager libraryManager,
         ILocalizationManager localization,
-        ILogger<DatabaseOptimizeTask> logger)
+        ILogger<DatabaseRepairTask> logger)
     {
         _doctor = doctor;
         _libraryManager = libraryManager;
@@ -44,10 +44,10 @@ public sealed class DatabaseOptimizeTask : IScheduledTask
     }
 
     /// <inheritdoc />
-    public string Name => "Database optimize";
+    public string Name => "Database repair";
 
     /// <inheritdoc />
-    public string Key => "DatabaseOptimize";
+    public string Key => "DatabaseRepair";
 
     /// <inheritdoc />
     public string Description =>

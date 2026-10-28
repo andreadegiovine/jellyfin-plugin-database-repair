@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Jellyfin.Database.Implementations;
-using Jellyfin.Plugin.DatabaseOptimize.Models;
+using Jellyfin.Plugin.DatabaseRepair.Models;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Services;
+namespace Jellyfin.Plugin.DatabaseRepair.Services;
 
 /// <summary>
 /// Reads the live schema (tables, columns and foreign keys) from SQLite, so the checks follow the

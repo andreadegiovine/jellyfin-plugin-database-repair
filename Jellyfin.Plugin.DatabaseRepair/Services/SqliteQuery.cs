@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Jellyfin.Database.Implementations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Services;
+namespace Jellyfin.Plugin.DatabaseRepair.Services;
 
 /// <summary>
 /// Read-only queries on the connection of a <see cref="JellyfinDbContext"/>. The connection must

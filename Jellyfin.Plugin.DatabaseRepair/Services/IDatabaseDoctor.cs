@@ -1,8 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Jellyfin.Plugin.DatabaseOptimize.Models;
+using Jellyfin.Plugin.DatabaseRepair.Models;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Services;
+namespace Jellyfin.Plugin.DatabaseRepair.Services;
 
 /// <summary>
 /// Checks the Jellyfin database and repairs the problems it finds.

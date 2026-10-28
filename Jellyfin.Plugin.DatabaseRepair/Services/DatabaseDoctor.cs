@@ -6,11 +6,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Jellyfin.Database.Implementations;
-using Jellyfin.Plugin.DatabaseOptimize.Models;
+using Jellyfin.Plugin.DatabaseRepair.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Services;
+namespace Jellyfin.Plugin.DatabaseRepair.Services;
 
 /// <inheritdoc />
 public sealed class DatabaseDoctor : IDatabaseDoctor

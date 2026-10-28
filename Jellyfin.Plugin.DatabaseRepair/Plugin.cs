@@ -1,23 +1,23 @@
 using System;
 using System.Collections.Generic;
-using Jellyfin.Plugin.DatabaseOptimize.Configuration;
+using Jellyfin.Plugin.DatabaseRepair.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 
-namespace Jellyfin.Plugin.DatabaseOptimize;
+namespace Jellyfin.Plugin.DatabaseRepair;
 
 /// <summary>
 /// Main plugin class. The plugin contributes a scheduled task
-/// (<see cref="ScheduledTasks.DatabaseOptimizeTask"/>) and a settings page.
+/// (<see cref="ScheduledTasks.DatabaseRepairTask"/>) and a settings page.
 /// </summary>
 public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
 {
     /// <summary>
     /// Prefix prepended to every log message of this plugin, to make it easy to find in the server log.
     /// </summary>
-    public const string LogPrefix = "Database optimize: ";
+    public const string LogPrefix = "Database repair: ";
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Plugin"/> class.
@@ -31,7 +31,7 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     }
 
     /// <inheritdoc />
-    public override string Name => "Database optimize";
+    public override string Name => "Database repair";
 
     /// <inheritdoc />
     public override Guid Id => Guid.Parse("1d641174-c27f-4b9c-be54-f5261fec5b28");
@@ -51,7 +51,11 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
         yield return new PluginPageInfo
         {
             Name = Name,
-            EmbeddedResourcePath = GetType().Namespace + ".Configuration.configPage.html"
+            DisplayName = Name,
+            EmbeddedResourcePath = GetType().Namespace + ".Configuration.configPage.html",
+            EnableInMainMenu = true,
+            MenuSection = "server",
+            MenuIcon = "build"
         };
     }
 }

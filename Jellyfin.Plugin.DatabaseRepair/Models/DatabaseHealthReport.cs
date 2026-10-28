@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Jellyfin.Plugin.DatabaseOptimize.Models;
+namespace Jellyfin.Plugin.DatabaseRepair.Models;
 
 /// <summary>
 /// The result of a diagnosis of the database.

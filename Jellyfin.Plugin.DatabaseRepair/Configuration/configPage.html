@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Database optimize</title>
+    <title>Database repair</title>
 </head>
 <body>
-<div id="DatabaseOptimizeConfigPage" data-role="page" class="page type-interior pluginConfigurationPage" data-require="emby-input,emby-button,emby-checkbox">
+<div id="DatabaseRepairConfigPage" data-role="page" class="page type-interior pluginConfigurationPage" data-require="emby-input,emby-button,emby-checkbox">
     <div data-role="content">
         <div class="content-primary">
-            <h2 class="sectionTitle">Database optimize</h2>
-            <form id="DatabaseOptimizeConfigForm">
+            <h2 class="sectionTitle">Database repair</h2>
+            <form id="DatabaseRepairConfigForm">
                 <div class="checkboxContainer checkboxContainer-withDescripton">
                     <label class="emby-checkbox-label">
                         <input id="ExecuteDatabaseOperations" name="ExecuteDatabaseOperations" type="checkbox" is="emby-checkbox" />
@@ -57,7 +57,7 @@
     <script type="text/javascript">
         (function () {
             var pluginId = '1d641174-c27f-4b9c-be54-f5261fec5b28';
-            var page = document.querySelector('#DatabaseOptimizeConfigPage');
+            var page = document.querySelector('#DatabaseRepairConfigPage');
 
             page.addEventListener('pageshow', function () {
                 Dashboard.showLoadingMsg();
@@ -69,7 +69,7 @@
                 });
             });
 
-            document.querySelector('#DatabaseOptimizeConfigForm').addEventListener('submit', function (e) {
+            document.querySelector('#DatabaseRepairConfigForm').addEventListener('submit', function (e) {
                 e.preventDefault();
                 Dashboard.showLoadingMsg();
                 ApiClient.getPluginConfiguration(pluginId).then(function (config) {

@@ -1,11 +1,11 @@
-# Database optimize
+# Database repair
 
-A Jellyfin **12** plugin that adds a scheduled task, **Database optimize**, which reads the live
+A Jellyfin **12** plugin that adds a scheduled task, **Database repair**, which reads the live
 schema of `jellyfin.db`, checks the database and repairs the problems that make library scans
 fail with `SQLite Error 19: 'FOREIGN KEY constraint failed'`.
 
 The task is under *Dashboard → Scheduled Tasks → Maintenance*; its options are in the plugin
-settings page (*Dashboard → Plugins → Database optimize*).
+settings page, which has its own **Database repair** entry in the Dashboard sidebar (*Server* section).
 
 ## Settings
 
@@ -15,7 +15,7 @@ settings page (*Dashboard → Plugins → Database optimize*).
 | Create a backup before the run | off | When on (and operations are executed), a copy of the database is written to the backup folder right before the repair, only if problems were found. If the backup fails, the repair is not executed. |
 | Backup folder (absolute path) | empty | Folder that receives the backups. The run timestamp is added at the end of the file name, e.g. `jellyfin_20260101-030000.db`. |
 
-Run the task once in dry run mode first and read the lines starting with `Database optimize:`
+Run the task once in dry run mode first and read the lines starting with `Database repair:`
 (`[DRY RUN] Would execute: ...`) before enabling the execution.
 
 ## Requirements
@@ -27,19 +27,19 @@ Run the task once in dry run mode first and read the lines starting with `Databa
 ### From the plugin repository (recommended)
 
 1. In Jellyfin go to **Dashboard → Plugins → Repositories** and click **+**.
-2. Enter a name (e.g. `Database optimize`) and this URL:
+2. Enter a name (e.g. `Database repair`) and this URL:
 
    ```
-   https://andreadegiovine.github.io/jellyfin-plugin-database-optimize/repository.json
+   https://andreadegiovine.github.io/jellyfin-plugin-database-repair/repository.json
    ```
 
-3. Open **Dashboard → Plugins → Catalog**, find **Database optimize** and click **Install**.
+3. Open **Dashboard → Plugins → Catalog**, find **Database repair** and click **Install**.
 4. **Restart Jellyfin.**
 
 ### Manual installation
 
-1. Download the latest `database-optimize_<version>.zip` from the
-   [Releases](https://github.com/andreadegiovine/jellyfin-plugin-database-optimize/releases) page.
+1. Download the latest `database-repair_<version>.zip` from the
+   [Releases](https://github.com/andreadegiovine/jellyfin-plugin-database-repair/releases) page.
 2. Extract it into a new folder inside your Jellyfin `plugins` directory.
 3. **Restart Jellyfin.**
 
@@ -79,12 +79,12 @@ started by hand at any time. It is skipped while a library scan is running.
 
 ## Troubleshooting
 
-Every log line from this plugin starts with `Database optimize:`, so you can filter the Jellyfin
+Every log line from this plugin starts with `Database repair:`, so you can filter the Jellyfin
 log (**Dashboard → Logs**) on that text. The log lists the number of tables and foreign keys, each
 kind of problem found with its number of rows, every statement that changed rows, and what is left
 at the end.
 
-If you open an issue, please include the log lines starting with `Database optimize:`.
+If you open an issue, please include the log lines starting with `Database repair:`.
 
 ## Building from source
 
@@ -95,7 +95,7 @@ dotnet restore
 dotnet build -c Release
 ```
 
-The output is `Jellyfin.Plugin.DatabaseOptimize/bin/Release/net10.0/Jellyfin.Plugin.DatabaseOptimize.dll`.
+The output is `Jellyfin.Plugin.DatabaseRepair/bin/Release/net10.0/Jellyfin.Plugin.DatabaseRepair.dll`.
 
 ## Releasing
 
